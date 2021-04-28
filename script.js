@@ -27,7 +27,7 @@ const fetchName = function (number) {
 const renderName = function (result) {
   cardTitle.textContent = `${result.name}`;
   cardSubtitle.textContent = `${result.transliteration}`;
-  cardText.textContent = `${result.en.meaning}`;
+  cardText.textContent = `"${result.en.meaning}"`;
 };
 
 const number = Math.trunc(Math.random() * 99);

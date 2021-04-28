@@ -1,8 +1,9 @@
 const displayDiv = document.querySelector(".display");
 const refreshBtn = document.querySelector(".btn-refresh");
 
-const number = Math.trunc(Math.random() * 99);
-console.log(number);
+const cardTitle = document.querySelector(".card-title");
+const cardSubtitle = document.querySelector(".card-subtitle");
+const cardText = document.querySelector(".card-text");
 
 const fetchName = function (number) {
   fetch(`http://api.aladhan.com/asmaAlHusna/${number}`)
@@ -24,19 +25,16 @@ const fetchName = function (number) {
 };
 
 const renderName = function (result) {
-  const html = `
-    <div class="card" style="width: 18rem">
-      <div class="card-body">
-        <h5 class="card-title">${result.name}</h5>
-        <h6 class="card-subtitle mb-2 text-muted">${result.transliteration}</h6>
-        <p class="card-text">"${result.en.meaning}"</p>
-        <button class="btn btn-refresh btn-sm">
-          <img class="refresh" src="refresh.png" alt="" />
-        </button>
-      </div>
-    </div>
-
-  `;
-  displayDiv.insertAdjacentHTML("beforeend", html);
+  cardTitle.textContent = `${result.name}`;
+  cardSubtitle.textContent = `${result.transliteration}`;
+  cardText.textContent = `${result.en.meaning}`;
 };
+
+const number = Math.trunc(Math.random() * 99);
 fetchName(number);
+
+const refreshPage = function () {
+  window.location.reload();
+};
+
+refreshBtn.addEventListener("click", refreshPage);

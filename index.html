@@ -33,6 +33,12 @@
         </div>
       </div>
     </div>
+    <audio src="bg.mp3" id="bg-audio"></audio>
+    <script>
+      window.onload = function () {
+        document.getElementById("bg-audio").play(); // get this to play without stopping when page reloads
+      };
+    </script>
   </body>
   <script src="script.js"></script>
 </html>

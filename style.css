@@ -1,0 +1,17 @@
+.card {
+  left: 50%;
+  transform: translate(-50%, 50%);
+}
+
+.card-body {
+  text-align: center;
+}
+
+.refresh {
+  width: 20px;
+}
+
+.btn-refresh {
+  border-radius: 100% !important;
+  background-color: white;
+}

@@ -1,4 +1,8 @@
 const displayDiv = document.querySelector(".display");
+const refreshBtn = document.querySelector(".btn-refresh");
+
+const number = Math.trunc(Math.random() * 99);
+console.log(number);
 
 const fetchName = function (number) {
   fetch(`http://api.aladhan.com/asmaAlHusna/${number}`)
@@ -35,5 +39,4 @@ const renderName = function (result) {
   `;
   displayDiv.insertAdjacentHTML("beforeend", html);
 };
-
-fetchName(4);
+fetchName(number);

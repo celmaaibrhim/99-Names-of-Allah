@@ -1,6 +1,10 @@
+.background {
+  background-image: url("/background.jpg");
+  background-size: cover;
+}
 .card {
   left: 50%;
-  transform: translate(-50%, 50%);
+  transform: translate(-50%, 150%);
 }
 
 .card-body {
